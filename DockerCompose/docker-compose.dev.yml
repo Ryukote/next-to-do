@@ -1,0 +1,12 @@
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      - SA_PASSWORD=ToDoAppPassword123
+      - ACCEPT_EULA=Y
+    ports:
+      - 1456:1433
+    volumes:
+      - sqlserverdata:/var/lib/sqlserver/data
+volumes:
+  sqlserverdata:
